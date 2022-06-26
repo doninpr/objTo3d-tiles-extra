@@ -13,10 +13,16 @@ Node command line tool and module convert obj model file to 3D Tiles, based on [
 
 ## Getting Start
 
+If you already have installed PrincessGod/obj23dtiles package remove it with command
+
+```
+npm uninstall -g obj23dtiles
+```
+
 Make sure you have [Node](https://nodejs.org/en/) installed, and then
 
 ```
-npm install -g obj23dtiles
+npm install obj23dtiles-extra
 ```
 
 ### Basic Usage
