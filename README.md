@@ -1,6 +1,7 @@
 # This fork from [PrincessGod/objTo3d-tiles](https://github.com/PrincessGod/objTo3d-tiles) for continue maintaning and add expra features for personal purposes.
 
-
+New features:  
+- Added tilesetOptions parameter for combine tilesets function for setting geometricError and refine method.
 
 # PrincessGod/objTo3d-tiles README
 
