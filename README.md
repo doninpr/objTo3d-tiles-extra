@@ -3,15 +3,9 @@
 New features:  
 - Added tilesetOptions parameter for combine tilesets function for setting geometricError and refine method.
 
-# PrincessGod/objTo3d-tiles README
-
-> WARNING: THIS REPO IS NO LONGER MAINTANING, MAYBE NOT SUPPORT NEWERST CESIUM.
+> WARNING: THIS REPO IS UNDER DEVELOPING.
 
 Node command line tool and module convert obj model file to 3D Tiles, based on [obj2gltf](https://github.com/AnalyticalGraphicsInc/obj2gltf).
-
-[Online Demonstration](https://princessgod.github.io/plc/batchedTileset.html)
-
-[简体中文](README_CN.md)
 
 >NOTE: Only support `.b3dm` and `.i3dm` for now!
 >
@@ -234,9 +228,4 @@ barrel\
 * [glTF](https://github.com/KhronosGroup/glTF)
 
 ## Credits
-Great thanks to Sean Lilley([@lilleyse](https://github.com/lilleyse)) for helping and advising.
-
-Thanks [AnalyticalGraphicsInc](https://github.com/AnalyticalGraphicsInc) provide a lot of open source project (like [Cesium](https://github.com/AnalyticalGraphicsInc/cesium) and [3D Tiles](https://github.com/AnalyticalGraphicsInc/3d-tiles)) and creat a great GIS environment.
-
-## License
-[Apache License 2.0](https://github.com/PrincessGod/objTo3d-tiles/blob/master/LICENSE)
+Great thanks to [PrincessGod](https://github.com/PrincessGod) for developing original tool.
