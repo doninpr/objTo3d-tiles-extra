@@ -143,8 +143,15 @@ Here are different bounding volumes.
 ### Combine tilesets
 You can combine tilesets into one `tileset.json` as external tileset.
 
+`-i inputDir` (_required_) Input directory include tilesets.  
+`-o outputTileset` (_optional, default: "tileset.json"_) Output tileset file path.  
+`-pj tilesetOptionsJson` (_optional, default: "{}"_) tileset options json. ex: `{ "geometricError": 200, "refine": "ADD" }`  
+&emsp;&emsp;&emsp;&emsp;`tilesetOptionsJson.geometricError` (_optional, default:500_) tileset geometricError.  
+&emsp;&emsp;&emsp;&emsp;`tilesetOptionsJson.refine` (_optional, default: "ADD"_) tileset refine method.
+
+
 ```
-obj23dtiles combine -i ./bin/barrel/output
+obj23dtiles combine -i ./bin/barrel/output -pj '{ "geometricError": 200, "refine": "ADD" }'
 ```
 
 ## Using as node module

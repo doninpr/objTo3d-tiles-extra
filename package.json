@@ -19,7 +19,7 @@
   ],
   "preferGlobal": true,
   "bin": {
-    "obj23dtiles" : "bin/obj23dtiles.js"
+    "obj23dtiles": "bin/obj23dtiles.js"
   },
   "author": "princessgod",
   "license": "ISC",
@@ -31,13 +31,13 @@
     "bluebird": "^3.5.1",
     "cesium": "^1.38.0",
     "fs-extra": "^4.0.2",
-    "jpeg-js": "^0.3.3",
+    "jpeg-js": "^0.4.4",
     "mime": "^2.0.3",
     "pngjs": "^3.3.0",
-    "yargs": "^10.0.3"
+    "yargs": "^17.5.1"
   },
   "devDependencies": {
-    "eslint": "^4.9.0",
+    "eslint": "^8.18.0",
     "eslint-config-cesium": "^2.0.1"
   }
 }

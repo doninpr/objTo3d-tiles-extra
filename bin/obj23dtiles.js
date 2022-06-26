@@ -64,6 +64,11 @@ var argv = yargs
             type : 'string',
             normalize : true
         },
+        tilesetOptionsJson : {
+            alias : 'pj',
+            describe : 'Tileset options json.',
+            type : 'string'
+        },
         outputBatchTable : {
             describe : 'Output BatchTable Json file.',
             type : 'boolean',
@@ -167,9 +172,17 @@ var argv = yargs
 
 if(argv._[2] === 'combine') {
     console.time('Total');
+    var optionsJson = {};
+    try {
+      optionsJson = JSON.parse(argv.tilesetOptionsJson);
+    } catch (e) {
+      console.log(e);
+    }
+
     return combine({
         inputDir: argv.input,
         outputTileset: argv.output,
+        tilesetOptions: optionsJson,
     })
     .then(function(result) {
         var tileset = result.tileset;
@@ -244,6 +257,7 @@ var options = {
     customFeatureTable : argv.customFeatureTable,
     tileset : argv.tileset,
     tilesetOptions : argv.tilesetOptions,
+    tilesetOptionsJson : argv.tilesetOptionsJson,
     useOcclusion : argv.useOcclusion,
     separate : argv.separate,
     separateTextures : argv.separateTextures,

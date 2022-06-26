@@ -242,6 +242,12 @@ Or use custom tileset options and BatchTable.
 
 ## Combine tilesets
 
+`options.inputDir` (_required_) Input directory include tilesets.  
+`options.outputTileset` (_optional, default: "tileset.json"_) Output tileset file path.  
+`options.tilesetOptions` (_optional, default: {}_) tileset options json. ex: `{ "geometricError": 200, "refine": "ADD" }`  
+&emsp;&emsp;&emsp;&emsp;`tilesetOptions.geometricError` (_optional, default:500_) tileset geometricError.  
+&emsp;&emsp;&emsp;&emsp;`tilesetOptions.refine` (_optional, default: "ADD"_) tileset refine method.
+
 ```javascript
     var obj23dtiles = require('obj23dtiles');
     var fs = require('fs');
@@ -249,7 +255,10 @@ Or use custom tileset options and BatchTable.
     var combine = obj23dtiles.combine;
     var outputPath = './bin/barrel/output/tileset.json';
 
-    combine({inputDir : './bin/barrel/output'})
+    combine({
+      inputDir : './bin/barrel/output',
+      tilesetOptions: { "geometricError": 200, "refine": "ADD" }
+    })
         .then(function(result) {
             fs.writeFile(outputPath, JSON.stringify(result.tileset), 'utf8');
         })
