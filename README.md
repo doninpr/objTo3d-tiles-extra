@@ -10,7 +10,7 @@
 </details>
   
   
-## Futures plan:
+## Features plan:
 
 1. Move to ES6
 2. Update tests
