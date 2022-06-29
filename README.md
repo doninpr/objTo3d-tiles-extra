@@ -1,8 +1,23 @@
-# This fork from [PrincessGod/objTo3d-tiles](https://github.com/PrincessGod/objTo3d-tiles) for continue maintaning and add expra features for personal purposes.
+### This fork from [PrincessGod/objTo3d-tiles](https://github.com/PrincessGod/objTo3d-tiles) for continue maintaning and add expra features for personal purposes.
 
-New features:  
+## New features:  
 - Added tilesetOptions parameter for combine tilesets function for setting geometricError and refine method.
+- When used as a node lib, return a Promise (thanks to [addam PR](https://github.com/PrincessGod/objTo3d-tiles/pull/46/files))
 
+<details>
+  <summary>Bugfixes:</summary>
+-  Fixbug loadObj.js: position2D is not defined (Thanks to @tankvn PR)
+</details>
+  
+  
+## Futures plan:
+
+1. Move to ES6
+2. Update tests
+3. Improve tilesets combine (make possible to create nested tilesets)
+4. Check [jiaojialulu PR](https://github.com/PrincessGod/objTo3d-tiles/pull/4) and merge if it'll improve the tool
+
+  
 > WARNING: THIS REPO IS UNDER DEVELOPING.
 
 Node command line tool and module convert obj model file to 3D Tiles, based on [obj2gltf](https://github.com/AnalyticalGraphicsInc/obj2gltf).
