@@ -256,6 +256,8 @@ Or use custom tileset options and BatchTable.
 * @param {Boolean} [options.region = true] Using bounding region for tile.
 * @param {Boolean} [options.box] Using bounding box for tile.
 * @param {Boolean} [options.sphere] Using bounding sphere for tile.
+* @param {Array} [options.headingPitchRoll = [0, 0, 0]] Applying rotation to model by creating transform matrix.
+* @param {Number} [options.viewerRequestFactor] Adding viewerRequestVolume.sphere to tileset with radius multiplier `radius=sphere_radius * viewerRequestFactor`.
 
 
 ## Combine tilesets

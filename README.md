@@ -1,24 +1,26 @@
-### This fork from [PrincessGod/objTo3d-tiles](https://github.com/PrincessGod/objTo3d-tiles) for continue maintaning and add expra features for personal purposes.
+#### This is fork from [PrincessGod/objTo3d-tiles](https://github.com/PrincessGod/objTo3d-tiles) for continue maintaning and add expra features for personal purposes.
 
-## New features:  
-- Added tilesetOptions parameter for combine tilesets function for setting geometricError and refine method.
-- When used as a node lib, return a Promise (thanks to [addam PR](https://github.com/PrincessGod/objTo3d-tiles/pull/46/files))
+### New features:  
+- tilesetOptions parameter for combine tilesets function for setting geometricError and refine method.
+- When used as a node lib, return a Promise (thanks to [addam PR](https://github.com/PrincessGod/objTo3d-tiles/pull/46/files))  
+- tilesetOptions.headingPitchRoll parameter for obj23dtiles module (Applying rotation to model by creating transform matrix)
+- tilesetOptions.viewerRequestFactor parameter for obj23dtiles module (Adding viewerRequestVolume.sphere to tileset with radius multiplier `radius=sphere_radius * viewerRequestFactor`)
 
-<details>
-  <summary>Bugfixes:</summary>
+### Bugfixes:
 -  Fixbug loadObj.js: position2D is not defined (Thanks to @tankvn PR)
 -  typo error for options.transform in createSingleTileset
-</details>
   
   
-## Features plan:
+### Features plan:
 
 1. Move to ES6
-2. Update tests
-3. Improve tilesets combine (make possible to create nested tilesets)
-4. Check [jiaojialulu PR](https://github.com/PrincessGod/objTo3d-tiles/pull/4) and merge if it'll improve the tool
+2. Add support boundingVolume "box" and "sphere" to combine function
+3. Fix boundingVolume after applying transform matrix
+4. Update tests
+5. Improve tilesets combine (make possible to create nested tilesets)
+6. Add combine to nested tiles method
+7. Add octree subdivision option
 
-  
 > WARNING: THIS REPO IS UNDER DEVELOPING.
 
 Node command line tool and module convert obj model file to 3D Tiles, based on [obj2gltf](https://github.com/AnalyticalGraphicsInc/obj2gltf).
@@ -26,6 +28,10 @@ Node command line tool and module convert obj model file to 3D Tiles, based on [
 >NOTE: Only support `.b3dm` and `.i3dm` for now!
 >
 >Please use Cesium after v1.37, cause this 3d tile use glTF2.0.
+
+## Using as node module
+If you want to use this tool in node or debug, check out [how to use as node module](NODEUSAGE.md).
+
 
 ## Getting Start
 
@@ -168,7 +174,8 @@ The `customTilesetOptions.json` can have options bellow, and these are fake valu
 * @param {Boolean} [options.region = true] Using bounding region for tile.
 * @param {Boolean} [options.box] Using bounding box for tile.
 * @param {Boolean} [options.sphere] Using bounding sphere for tile.
-
+* @param {Array} [options.headingPitchRoll = [0, 0, 0]] Applying rotation to model by creating transform matrix.
+* @param {Number} [options.viewerRequestFactor] Adding viewerRequestVolume.sphere to tileset with radius multiplier `radius=sphere_radius * viewerRequestFactor`.
 
 >NOTE: If you are not specify the `transHeight` option, your model will be place at earth ground surface, which means no matter what the height your models are,
 >the lowerest point of your models will be place at `height = 0.0` on the earth. But if you want keep origin heigth you just need specify `transHeight = 0.0`.
@@ -189,9 +196,6 @@ You can combine tilesets into one `tileset.json` as external tileset.
 ```
 obj23dtiles combine -i ./bin/barrel/output -pj '{ "geometricError": 200, "refine": "ADD" }'
 ```
-
-## Using as node module
-If you want to use this tool in node or debug, check out [how to use as node module](NODEUSAGE.md).
 
 ## Test
 Navigate to this project folder and run
