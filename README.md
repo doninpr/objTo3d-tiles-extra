@@ -4,7 +4,6 @@
 - tilesetOptions parameter for combine tilesets function for setting geometricError and refine method.
 - When used as a node lib, return a Promise (thanks to [addam PR](https://github.com/PrincessGod/objTo3d-tiles/pull/46/files))  
 - tilesetOptions.headingPitchRoll parameter for obj23dtiles module (Applying rotation to model by creating transform matrix)
-- tilesetOptions.viewerRequestFactor parameter for obj23dtiles module (Adding viewerRequestVolume.sphere to tileset with radius multiplier `radius=sphere_radius * viewerRequestFactor`)
 
 ### Bugfixes:
 -  Fixbug loadObj.js: position2D is not defined (Thanks to @tankvn PR)
@@ -16,10 +15,11 @@
 1. Move to ES6
 2. Add support boundingVolume "box" and "sphere" to combine function
 3. Fix boundingVolume after applying transform matrix
-4. Update tests
-5. Improve tilesets combine (make possible to create nested tilesets)
-6. Add combine to nested tiles method
-7. Add octree subdivision option
+4. Add snapToGround option
+5. Update tests
+6. Improve tilesets combine (make possible to create nested tilesets)
+7. Add combine to nested tiles method
+8. Add octree subdivision option
 
 > WARNING: THIS REPO IS UNDER DEVELOPING.
 
@@ -175,7 +175,6 @@ The `customTilesetOptions.json` can have options bellow, and these are fake valu
 * @param {Boolean} [options.box] Using bounding box for tile.
 * @param {Boolean} [options.sphere] Using bounding sphere for tile.
 * @param {Array} [options.headingPitchRoll = [0, 0, 0]] Applying rotation to model by creating transform matrix.
-* @param {Number} [options.viewerRequestFactor] Adding viewerRequestVolume.sphere to tileset with radius multiplier `radius=sphere_radius * viewerRequestFactor`.
 
 >NOTE: If you are not specify the `transHeight` option, your model will be place at earth ground surface, which means no matter what the height your models are,
 >the lowerest point of your models will be place at `height = 0.0` on the earth. But if you want keep origin heigth you just need specify `transHeight = 0.0`.

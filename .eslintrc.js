@@ -1,6 +1,13 @@
+'use strict';
 module.exports = {
-    "extends": "cesium/node",
-    "globals": {
-        "Promise": true
+    'parserOptions': {
+        'ecmaVersion': 2017
+    },
+    'env': {
+        'es6': true
+    },
+    'extends': 'cesium/node',
+    'globals': {
+        'Promise': true
     }
 };
