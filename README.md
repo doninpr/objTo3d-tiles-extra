@@ -1,4 +1,4 @@
-#### This is fork from [PrincessGod/objTo3d-tiles](https://github.com/PrincessGod/objTo3d-tiles) for continue maintaning and add expra features for personal purposes.
+#### This is fork from [PrincessGod/objTo3d-tiles](https://github.com/PrincessGod/objTo3d-tiles) for add extra features for personal purposes.
 
 ### New features:  
 - tilesetOptions parameter for combine tilesets function for setting geometricError and refine method.
